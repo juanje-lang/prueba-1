@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUANJE | Ingeniería de Conversión 360°</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .subtle-grid {
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .luxury-shadow {
+            box-shadow: 0 32px 64px -12px rgba(0,0,0,0.08);
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-white text-[#0f172a] font-sans selection:bg-[#0f172a] selection:text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-[#0f172a] flex items-center justify-center rounded-sm">
+                <i data-lucide="layers" class="w-4 h-4 text-white"></i>
+            </div>
+            <span class="font-bold tracking-tighter text-xl">JUANJE.</span>
+        </div>
+        <div class="hidden md:flex gap-8 items-center">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Estrategia 360°</span>
+            <a href="#audit-section" class="px-6 py-2 bg-[#0f172a] text-white text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-slate-800 transition-all">
+                Solicitar Auditoría
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative pt-40 pb-20 px-8 lg:px-20 min-h-screen flex flex-col items-center justify-center text-center subtle-grid">
+        <div class="max-w-5xl space-y-8 relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-100 rounded-full mb-4">
+                <div class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-600">Análisis de Mercado en Tiempo Real</span>
+            </div>
+
+            <h1 class="font-sans text-5xl md:text-8xl font-extrabold leading-[0.95] tracking-tight text-balance uppercase">
+                DEJA QUE LOS CLIENTES <br />
+                <span class="text-blue-600 italic font-serif normal-case">se acerquen a ti.</span>
+            </h1>
+
+            <p class="text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto font-medium leading-relaxed">
+                No es marketing. Es <span class="text-[#0f172a] font-bold underline decoration-blue-500 decoration-4">Ingeniería de Conversión</span>. Integramos SEO, SEM y Redes Sociales en un solo sistema de análisis 360° diseñado para capturar el deseo de tu cliente.
+            </p>
+
+            <div class="pt-10 flex flex-col items-center gap-8">
+                <a href="#audit-section" class="px-12 py-6 bg-[#0f172a] text-white font-bold uppercase tracking-[0.2em] text-sm rounded-full luxury-shadow transition-all hover:-translate-y-1">
+                    Iniciar Auditoría de Negocio
+                </a>
+                
+                <div class="flex gap-12 text-slate-400 font-bold text-[10px] uppercase tracking-widest">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i>
+                        <span>SEO Local</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i>
+                        <span>SEM ROI+</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i>
+                        <span>Social Neuro</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="py-32 px-8 lg:px-20 bg-slate-50 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-8">
+                    <h2 class="font-sans text-4xl md:text-6xl font-extrabold tracking-tight leading-none">
+                        VENDER ES UN <br />
+                        <span class="text-blue-600 italic font-serif">PROCESO MENTAL.</span>
+                    </h2>
+                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed font-medium">
+                        <p>
+                            Siguiendo los principios de <span class="text-[#0f172a] font-bold">Joseph Sugarman</span>, creamos un "tobogán" de ventas donde el cliente no puede evitar deslizarse hasta la conversión.
+                        </p>
+                        <p class="border-l-4 border-blue-600 pl-6 italic text-slate-500">
+                            "El deseo no se crea. Se canaliza." — Eugene Schwartz.
+                        </p>
+                        <p>
+                            Nuestro sistema 360° no intenta convencer. Analiza dónde está el deseo de tu mercado y posiciona tu negocio como la única solución lógica.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="p-8 bg-white border border-slate-100 flex items-start gap-6 hover:shadow-xl transition-all group">
+                        <div class="w-12 h-12 bg-slate-50 flex items-center justify-center rounded-lg group-hover:bg-blue-600 transition-colors">
+                            <i data-lucide="search" class="w-6 h-6 text-[#0f172a] group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-1">SEO de Captura</h3>
+                            <p class="text-slate-500 text-sm">No buscamos tráfico, buscamos intención de compra.</p>
+                        </div>
+                    </div>
+                    <div class="p-8 bg-white border border-slate-100 flex items-start gap-6 hover:shadow-xl transition-all group">
+                        <div class="w-12 h-12 bg-slate-50 flex items-center justify-center rounded-lg group-hover:bg-blue-600 transition-colors">
+                            <i data-lucide="mouse-pointer-2" class="w-6 h-6 text-[#0f172a] group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-1">SEM de Precisión</h3>
+                            <p class="text-slate-500 text-sm">Anuncios que activan disparadores psicológicos.</p>
+                        </div>
+                    </div>
+                    <div class="p-8 bg-white border border-slate-100 flex items-start gap-6 hover:shadow-xl transition-all group">
+                        <div class="w-12 h-12 bg-slate-50 flex items-center justify-center rounded-lg group-hover:bg-blue-600 transition-colors">
+                            <i data-lucide="share-2" class="w-6 h-6 text-[#0f172a] group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-1">Social Neuro-Impact</h3>
+                            <p class="text-slate-500 text-sm">Contenido diseñado para detener el scroll.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules -->
+    <section class="py-32 px-8 lg:px-20">
+        <div class="max-w-7xl mx-auto space-y-40">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-8">
+                    <div class="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-600">Módulo 01 // SEO</div>
+                    <h3 class="text-4xl md:text-6xl font-extrabold tracking-tight">VISIBILIDAD <br /> ESTRATÉGICA.</h3>
+                    <p class="text-lg text-slate-500 leading-relaxed">
+                        Analizamos los algoritmos de búsqueda local para que tu negocio sea la primera respuesta. No es solo estar arriba, es ser la opción que genera confianza instantánea.
+                    </p>
+                </div>
+                <img src="https://picsum.photos/seed/strategy1/800/600" alt="Strategy" class="rounded-xl luxury-shadow">
+            </div>
+        </div>
+    </section>
+
+    <!-- Audit Section -->
+    <section id="audit-section" class="py-40 px-8 relative">
+        <div class="max-w-4xl mx-auto text-center space-y-12">
+            <div class="space-y-4">
+                <h2 class="text-5xl md:text-7xl font-extrabold tracking-tight">
+                    ¿ESTÁS LISTO PARA <br />
+                    <span class="text-blue-600 italic font-serif">EL ANÁLISIS 360°?</span>
+                </h2>
+                <p class="text-xl text-slate-500 font-medium">
+                    No es una llamada de ventas. Es una auditoría estratégica. Si tu negocio tiene fugas de conversión, las encontraremos.
+                </p>
+            </div>
+
+            <div class="bg-white border border-slate-100 p-8 md:p-16 luxury-shadow relative text-left">
+                <form class="space-y-6">
+                    <div class="space-y-4">
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-bold uppercase tracking-widest text-slate-400 ml-1">Nombre Completo</label>
+                            <input type="text" required placeholder="Ej. Juan Pérez" class="w-full bg-slate-50 border border-slate-200 px-4 py-4 text-slate-900 font-sans text-sm focus:border-slate-900 focus:bg-white outline-none transition-all">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-bold uppercase tracking-widest text-slate-400 ml-1">Negocio Local</label>
+                            <input type="text" required placeholder="Ej. Clínica Dental Avanzada" class="w-full bg-slate-50 border border-slate-200 px-4 py-4 text-slate-900 font-sans text-sm focus:border-slate-900 focus:bg-white outline-none transition-all">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-bold uppercase tracking-widest text-slate-400 ml-1">Email Corporativo</label>
+                            <input type="email" required placeholder="ejemplo@empresa.com" class="w-full bg-slate-50 border border-slate-200 px-4 py-4 text-slate-900 font-sans text-sm focus:border-slate-900 focus:bg-white outline-none transition-all">
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 py-2">
+                        <input type="checkbox" required class="mt-1 w-4 h-4 rounded border-slate-300 text-slate-900 focus:ring-slate-900">
+                        <label class="text-[10px] uppercase tracking-widest text-slate-400 leading-tight">
+                            Acepto la política de privacidad para el tratamiento de mis datos.
+                        </label>
+                    </div>
+                    <button type="submit" class="w-full mt-4 py-5 bg-[#1e293b] text-white font-bold uppercase tracking-[0.2em] text-xs transition-all shadow-xl hover:bg-[#0f172a] hover:-translate-y-1">
+                        Solicitar Auditoría 360°
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-8 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-[#0f172a] flex items-center justify-center rounded-sm">
+                    <i data-lucide="layers" class="w-3 h-3 text-white"></i>
+                </div>
+                <span class="font-bold tracking-tighter">JUANJE.</span>
+            </div>
+            <p class="text-[10px] text-slate-400 uppercase tracking-widest">
+                &copy; 2026 // Ingeniería de Conversión
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Simple form handling
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Solicitud recibida! (Esto es un ejemplo, conecta tu formulario a un servicio real)');
+        });
+    </script>
+</body>
+</html>
