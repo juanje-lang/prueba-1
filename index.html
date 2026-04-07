@@ -29,12 +29,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JUANJE | Ingeniería de Conversión 360°</title>
     <meta name="description" content="No vendas Ferraris en un supermercado. Ingeniería de neuro-conversión para transformar tu negocio en una máquina de captación de clientes de alto valor.">
-    <link rel="canonical" href="https://tuneuromarketing.com/">
-
     <meta property="og:title" content="JUANJE | Ingeniería de Conversión 360°">
     <meta property="og:description" content="Tu negocio es de élite, deja de vender como si fuera de consumo masivo.">
     <meta property="og:url" content="https://tuneuromarketing.com/">
-    <meta property="og:type" content="website">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -54,20 +51,40 @@
     </script>
 
     <style>
-        .subtle-grid {
-            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
-            background-size: 32px 32px;
-        }
-        .luxury-shadow {
-            box-shadow: 0 32px 64px -12px rgba(0,0,0,0.08);
-        }
-        .text-balance {
-            text-wrap: balance;
-        }
+        .subtle-grid { background-image: radial-gradient(#e2e8f0 1px, transparent 1px); background-size: 32px 32px; }
+        .luxury-shadow { box-shadow: 0 32px 64px -12px rgba(0,0,0,0.08); }
+        .text-balance { text-wrap: balance; }
+        #cookieBanner { transform: translateY(100%); transition: transform 0.5s ease; }
+        #cookieBanner.show { transform: translateY(0); }
+        .glass-modal { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border: 1px solid rgba(0,0,0,0.05); }
     </style>
 </head>
 
 <body class="bg-white text-[#0f172a] font-sans selection:bg-[#0f172a] selection:text-white overflow-x-hidden">
+
+    <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-[60] p-4 flex justify-center">
+        <div class="bg-[#0f172a] text-white p-6 rounded-2xl shadow-2xl max-w-4xl w-full flex flex-col md:row items-center justify-between gap-4 border border-slate-700">
+            <p class="text-xs text-slate-300 text-center md:text-left">
+                Utilizamos cookies para que tu experiencia sea tan precisa como nuestra ingeniería. Al continuar, aceptas nuestra <button onclick="openLegal('cookies')" class="text-blue-400 underline">política de cookies</button>.
+            </p>
+            <button onclick="acceptCookies()" class="px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-all text-xs uppercase tracking-widest">Aceptar</button>
+        </div>
+    </div>
+
+    <div id="legalModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/60 backdrop-blur-md p-4">
+        <div class="glass-modal max-w-3xl w-full max-h-[80vh] overflow-hidden rounded-3xl flex flex-col shadow-2xl">
+            <div class="p-6 border-b flex justify-between items-center bg-slate-50">
+                <h3 id="legalTitle" class="text-xl font-extrabold uppercase tracking-tight">Legal</h3>
+                <button onclick="closeModal('legalModal')" class="text-slate-400 hover:text-black">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div id="legalContent" class="p-8 overflow-y-auto text-slate-600 space-y-4 text-sm leading-relaxed"></div>
+            <div class="p-6 border-t text-center bg-slate-50">
+                <button onclick="closeModal('legalModal')" class="px-8 py-3 bg-[#0f172a] text-white font-bold rounded-xl">Cerrar</button>
+            </div>
+        </div>
+    </div>
 
     <nav class="fixed top-0 left-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div class="flex items-center gap-2">
@@ -77,7 +94,6 @@
             <span class="font-bold tracking-tighter text-xl uppercase">JUANJE.</span>
         </div>
         <div class="hidden md:flex gap-8 items-center">
-            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Estrategia 360°</span>
             <a href="#audit-section" class="px-6 py-2 bg-[#0f172a] text-white text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-slate-800 transition-all">
                 Solicitar Auditoría
             </a>
@@ -88,153 +104,141 @@
         <div class="max-w-5xl space-y-8 relative z-10">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-100 rounded-full mb-4">
                 <div class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
-                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-600">No vendas ferraris en un supermercado</span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-600 italic">No vendas ferraris en un supermercado</span>
             </div>
-
             <h1 class="font-sans text-5xl md:text-8xl font-extrabold leading-[0.95] tracking-tight text-balance uppercase">
                 DEJA QUE LOS CLIENTES <br />
                 <span class="text-blue-600 italic font-serif normal-case">se acerquen a ti.</span>
             </h1>
-
             <p class="text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto font-medium leading-relaxed">
                 No es marketing. Es <span class="text-[#0f172a] font-bold underline decoration-blue-500 decoration-4">Ingeniería de Conversión</span>. Integramos SEO, SEM y Redes en un sistema diseñado para capturar el deseo de tu mercado.
             </p>
-
             <div class="pt-10 flex flex-col items-center gap-8">
                 <a href="#audit-section" class="px-12 py-6 bg-[#0f172a] text-white font-bold uppercase tracking-[0.2em] text-sm rounded-full luxury-shadow transition-all hover:-translate-y-1">
                     Iniciar Auditoría de Negocio
                 </a>
-                
-                <div class="flex gap-12 text-slate-400 font-bold text-[10px] uppercase tracking-widest">
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i>
-                        <span>SEO Local</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i>
-                        <span>SEM ROI+</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i>
-                        <span>Social Neuro</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
     <section class="py-32 px-8 lg:px-20 bg-slate-50 border-y border-slate-100">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                <div class="space-y-8">
-                    <h2 class="font-sans text-4xl md:text-6xl font-extrabold tracking-tight leading-none">
-                        VENDER ES UN <br />
-                        <span class="text-blue-600 italic font-serif">PROCESO MENTAL.</span>
-                    </h2>
-                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed font-medium">
-                        <p>
-                            Siguiendo los principios de <span class="text-[#0f172a] font-bold">Joseph Sugarman</span>, creamos un "tobogán" de ventas donde el cliente no puede evitar deslizarse hasta la conversión.
-                        </p>
-                        <p class="border-l-4 border-blue-600 pl-6 italic text-slate-500">
-                            "El deseo no se crea. Se canaliza." — Eugene Schwartz.
-                        </p>
-                        <p>
-                            Nuestro sistema 360° no intenta convencer. Analiza dónde está el deseo de tu mercado y posiciona tu negocio como la única solución lógica.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-1 gap-6">
-                    <div class="p-8 bg-white border border-slate-100 flex items-start gap-6 hover:shadow-xl transition-all group">
-                        <div class="w-12 h-12 bg-slate-50 flex items-center justify-center rounded-lg group-hover:bg-blue-600 transition-colors">
-                            <i data-lucide="search" class="w-6 h-6 text-[#0f172a] group-hover:text-white transition-colors"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg mb-1 uppercase tracking-tighter">SEO de Captura</h3>
-                            <p class="text-slate-500 text-sm italic">No buscamos tráfico, buscamos intención de compra.</p>
-                        </div>
-                    </div>
-                    <div class="p-8 bg-white border border-slate-100 flex items-start gap-6 hover:shadow-xl transition-all group">
-                        <div class="w-12 h-12 bg-slate-50 flex items-center justify-center rounded-lg group-hover:bg-blue-600 transition-colors">
-                            <i data-lucide="mouse-pointer-2" class="w-6 h-6 text-[#0f172a] group-hover:text-white transition-colors"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg mb-1 uppercase tracking-tighter">SEM de Precisión</h3>
-                            <p class="text-slate-500 text-sm italic">Anuncios que activan disparadores psicológicos.</p>
-                        </div>
-                    </div>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div class="space-y-8">
+                <h2 class="font-sans text-4xl md:text-6xl font-extrabold tracking-tight">VENDER ES UN <br /><span class="text-blue-600 italic font-serif">PROCESO MENTAL.</span></h2>
+                <div class="space-y-6 text-lg text-slate-600 leading-relaxed font-medium">
+                    <p>Siguiendo los principios de <span class="text-[#0f172a] font-bold">Joseph Sugarman</span>, creamos un "tobogán" de ventas donde el cliente no puede evitar deslizarse hasta la conversión.</p>
+                    <p class="border-l-4 border-blue-600 pl-6 italic text-slate-500">"El deseo no se crea. Se canaliza." — Eugene Schwartz.</p>
+                    <p>Si tu Instagram no genera dinero, no tienes un negocio. Tienes un álbum de fotos.</p>
                 </div>
             </div>
+            <div class="grid grid-cols-1 gap-6">
+                <div class="p-8 bg-white border border-slate-100 flex items-start gap-6 hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 bg-slate-50 flex items-center justify-center rounded-lg group-hover:bg-blue-600 transition-colors">
+                        <i data-lucide="search" class="w-6 h-6 text-[#0f172a] group-hover:text-white"></i>
+                    </div>
+                    <div><h3 class="font-bold text-lg mb-1 uppercase tracking-tighter">SEO de Captura</h3><p class="text-slate-500 text-sm">No buscamos tráfico, buscamos intención de compra.</p></div>
+                </div>
+                <div class="p-8 bg-white border border-slate-100 flex items-start gap-6 hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 bg-slate-50 flex items-center justify-center rounded-lg group-hover:bg-blue-600 transition-colors">
+                        <i data-lucide="mouse-pointer-2" class="w-6 h-6 text-[#0f172a] group-hover:text-white"></i>
+                    </div>
+                    <div><h3 class="font-bold text-lg mb-1 uppercase tracking-tighter">SEM de Precisión</h3><p class="text-slate-500 text-sm">Anuncios que activan disparadores psicológicos.</p></div>
+                </div>
+                <div class="p-8 bg-white border border-slate-100 flex items-start gap-6 hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 bg-slate-50 flex items-center justify-center rounded-lg group-hover:bg-blue-600 transition-colors">
+                        <i data-lucide="share-2" class="w-6 h-6 text-[#0f172a] group-hover:text-white"></i>
+                    </div>
+                    <div><h3 class="font-bold text-lg mb-1 uppercase tracking-tighter">Social Neuro</h3><p class="text-slate-500 text-sm">Contenido diseñado para detener el scroll.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 bg-white text-center px-8 border-b border-slate-100">
+        <div class="max-w-4xl mx-auto space-y-12">
+            <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight">
+                <span class="text-slate-300 line-through decoration-red-500 decoration-4">SEO, SEM, LANDING PAGES...</span><br>
+                <span class="mt-4 block uppercase">Chino. Lenguaje inútil.</span>
+            </h2>
+            <p class="text-xl md:text-2xl text-slate-500 font-medium">Te lo explico claro: Creamos un <span class="text-blue-600 font-bold underline">sistema de precisión</span> que, una vez montado, funciona solo.</p>
         </div>
     </section>
 
     <section id="audit-section" class="py-40 px-8 relative">
         <div class="max-w-4xl mx-auto text-center space-y-12">
             <div class="space-y-4">
-                <h2 class="text-5xl md:text-7xl font-extrabold tracking-tight">
-                    ¿ESTÁS LISTO PARA <br />
-                    <span class="text-blue-600 italic font-serif">EL ANÁLISIS 360°?</span>
-                </h2>
-                <p class="text-xl text-slate-500 font-medium">
-                    No es una llamada de ventas. Es una auditoría estratégica de alta precisión.
-                </p>
+                <h2 class="text-5xl md:text-7xl font-extrabold tracking-tight">ANÁLISIS <span class="text-blue-600 italic font-serif">360°</span></h2>
+                <p class="text-xl text-slate-500 font-medium italic">"Yo mismo selecciono a mis clientes. Solo 3 plazas disponibles."</p>
             </div>
-
-            <div class="bg-white border border-slate-100 p-8 md:p-16 luxury-shadow relative text-left">
+            <div class="bg-white border border-slate-100 p-8 md:p-16 luxury-shadow text-left rounded-3xl">
                 <form action="https://formspree.io/f/mvzvlpjb" method="POST" id="leadForm" class="space-y-6">
-                    <div class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="space-y-1">
-                            <label class="text-[10px] font-bold uppercase tracking-widest text-slate-400 ml-1">Nombre Completo</label>
-                            <input type="text" name="nombre" required placeholder="Ej. Juan Pérez" class="w-full bg-slate-50 border border-slate-200 px-4 py-4 text-slate-900 font-sans text-sm focus:border-slate-900 focus:bg-white outline-none transition-all">
+                            <label class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Nombre</label>
+                            <input type="text" name="nombre" required placeholder="Tu nombre" class="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl outline-none focus:border-blue-500">
                         </div>
                         <div class="space-y-1">
-                            <label class="text-[10px] font-bold uppercase tracking-widest text-slate-400 ml-1">Negocio Local</label>
-                            <input type="text" name="negocio" required placeholder="Ej. Clínica Dental Avanzada" class="w-full bg-slate-50 border border-slate-200 px-4 py-4 text-slate-900 font-sans text-sm focus:border-slate-900 focus:bg-white outline-none transition-all">
-                        </div>
-                        <div class="space-y-1">
-                            <label class="text-[10px] font-bold uppercase tracking-widest text-slate-400 ml-1">Email Corporativo</label>
-                            <input type="email" name="email" required placeholder="ejemplo@empresa.com" class="w-full bg-slate-50 border border-slate-200 px-4 py-4 text-slate-900 font-sans text-sm focus:border-slate-900 focus:bg-white outline-none transition-all">
+                            <label class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Negocio</label>
+                            <input type="text" name="negocio" required placeholder="Nombre del negocio" class="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl outline-none focus:border-blue-500">
                         </div>
                     </div>
-                    <div class="flex items-start gap-3 py-2">
-                        <input type="checkbox" required class="mt-1 w-4 h-4 rounded border-slate-300 text-slate-900 focus:ring-slate-900">
-                        <label class="text-[10px] uppercase tracking-widest text-slate-400 leading-tight">
-                            He leído y acepto la política de privacidad y tratamiento de datos.
-                        </label>
+                    <div class="space-y-1">
+                        <label class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Email</label>
+                        <input type="email" name="email" required placeholder="tu@email.com" class="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl outline-none focus:border-blue-500">
                     </div>
-                    <button type="submit" id="submitBtn" class="w-full mt-4 py-5 bg-[#1e293b] text-white font-bold uppercase tracking-[0.2em] text-xs transition-all shadow-xl hover:bg-[#0f172a] hover:-translate-y-1">
-                        Solicitar Auditoría 360°
-                    </button>
+                    <div class="flex items-start gap-3 py-2 text-[10px] uppercase text-slate-400 tracking-widest">
+                        <input type="checkbox" required class="mt-1">
+                        <label>Acepto la <button type="button" onclick="openLegal('privacidad')" class="underline">política de privacidad</button>.</label>
+                    </div>
+                    <button type="submit" id="submitBtn" class="w-full py-5 bg-[#0f172a] text-white font-bold uppercase tracking-[0.2em] text-xs rounded-xl hover:bg-blue-600 transition-all shadow-xl">Solicitar Auditoría 360°</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 px-8 border-t border-slate-100">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 text-slate-400 uppercase tracking-widest text-[10px]">
-            <div class="flex items-center gap-2 text-[#0f172a]">
-                <div class="w-6 h-6 bg-[#0f172a] flex items-center justify-center rounded-sm">
-                    <i data-lucide="layers" class="w-3 h-3 text-white"></i>
-                </div>
-                <span class="font-bold tracking-tighter">JUANJE.</span>
+    <footer class="py-20 px-8 border-t border-slate-100 text-center">
+        <div class="max-w-7xl mx-auto space-y-8">
+            <div class="flex justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                <button onclick="openLegal('aviso')" class="hover:text-blue-600">Aviso Legal</button>
+                <button onclick="openLegal('privacidad')" class="hover:text-blue-600">Privacidad</button>
+                <button onclick="openLegal('cookies')" class="hover:text-blue-600">Cookies</button>
             </div>
-            <p>&copy; 2026 // Ingeniería de Conversión 360°</p>
+            <p class="text-[10px] text-slate-300 uppercase tracking-widest">&copy; 2026 // Juanje // Ingeniería de Conversión 360°</p>
         </div>
     </footer>
 
     <script>
-        // Inicializar iconos
         lucide.createIcons();
 
-        // Gestión de envío y eventos de rastreo
+        // LÓGICA LEGAL
+        const LEGAL_TEXTS = {
+            aviso: { title: "Aviso Legal", content: "<p><strong>Titular:</strong> Juanje Neuro-Marketing.</p><p>Uso lícito de contenidos y propiedad intelectual protegida.</p>" },
+            privacidad: { title: "Privacidad", content: "<p><strong>Responsable:</strong> Juanje.</p><p>Tus datos se usan para la auditoría y se procesan vía Formspree con cifrado.</p>" },
+            cookies: { title: "Cookies", content: "<p>Usamos cookies técnicas para el funcionamiento y analíticas para medir el éxito del sistema.</p>" }
+        };
+
+        function openLegal(type) {
+            document.getElementById('legalTitle').innerText = LEGAL_TEXTS[type].title;
+            document.getElementById('legalContent').innerHTML = LEGAL_TEXTS[type].content;
+            document.getElementById('legalModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // COOKIES
+        window.onload = () => { if (!localStorage.getItem('cookiesAccepted')) setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 1000); };
+        function acceptCookies() { localStorage.setItem('cookiesAccepted', 'true'); document.getElementById('cookieBanner').classList.remove('show'); }
+
+        // FORMULARIO E INTELIGENCIA
         const leadForm = document.getElementById('leadForm');
         const submitBtn = document.getElementById('submitBtn');
 
         leadForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            const originalText = submitBtn.innerText;
-            submitBtn.innerText = "PROCESANDO ANÁLISIS 360°...";
+            submitBtn.innerText = "PROCESANDO SISTEMA...";
             submitBtn.disabled = true;
 
             try {
@@ -245,30 +249,13 @@
                 });
 
                 if (response.ok) {
-                    // DISPARAR EVENTO LEAD PARA META (PIXEL)
-                    if (typeof fbq !== 'undefined') {
-                        fbq('track', 'Lead');
-                    }
-                    
-                    // DISPARAR EVENTO LEAD PARA GOOGLE
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'generate_lead', {
-                            'event_category': 'conversion',
-                            'event_label': 'Auditoria 360'
-                        });
-                    }
-
-                    alert('¡Sistemas sincronizados! Tu solicitud ha sido recibida con éxito. Juanje analizará tu caso en las próximas horas.');
+                    if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+                    if (typeof gtag !== 'undefined') gtag('event', 'generate_lead');
+                    alert('Sistemas sincronizados. Auditoría en marcha.');
                     leadForm.reset();
-                } else {
-                    alert('Error en la transmisión. Por favor, inténtalo de nuevo.');
-                }
-            } catch (error) {
-                alert('Fallo de conexión. Por favor, revisa tu red.');
-            } finally {
-                submitBtn.innerText = originalText;
-                submitBtn.disabled = false;
-            }
+                } else { alert('Error de enlace.'); }
+            } catch (error) { alert('Fallo de red.'); }
+            finally { submitBtn.innerText = "Solicitar Auditoría 360°"; submitBtn.disabled = false; }
         });
     </script>
 </body>
