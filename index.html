@@ -1,30 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZHT3MX3RZ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4ZHT3MX3RZ');
-    </script>
-
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1610609607118730'); 
-      fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1610609607118730&ev=PageView&noscript=1"
-    /></noscript>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JUANJE | Ingeniería de Conversión 360°</title>
@@ -63,11 +39,14 @@
 <body class="bg-white text-[#0f172a] font-sans selection:bg-[#0f172a] selection:text-white overflow-x-hidden">
 
     <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-[60] p-4 flex justify-center">
-        <div class="bg-[#0f172a] text-white p-6 rounded-2xl shadow-2xl max-w-4xl w-full flex flex-col md:row items-center justify-between gap-4 border border-slate-700">
-            <p class="text-xs text-slate-300 text-center md:text-left">
-                Utilizamos cookies para que tu experiencia sea tan precisa como nuestra ingeniería. Al continuar, aceptas nuestra <button onclick="openLegal('cookies')" class="text-blue-400 underline">política de cookies</button>.
+        <div class="bg-[#0f172a] text-white p-6 rounded-2xl shadow-2xl max-w-4xl w-full flex flex-col md:flex-row items-center justify-between gap-4 border border-slate-700">
+            <p class="text-xs text-slate-300 text-center md:text-left flex-1">
+                Utilizamos cookies técnicas y analíticas para que el sistema funcione con precisión matemática. Al continuar, aceptas nuestra <button onclick="openLegal('cookies')" class="text-blue-400 underline">política de cookies</button>.
             </p>
-            <button onclick="acceptCookies()" class="px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-all text-xs uppercase tracking-widest">Aceptar</button>
+            <div class="flex gap-3 w-full md:w-auto justify-center">
+                <button onclick="rejectCookies()" class="px-6 py-2 bg-transparent border border-slate-500 hover:bg-slate-800 text-slate-300 font-bold rounded-lg transition-all text-xs uppercase tracking-widest w-full md:w-auto">Rechazar</button>
+                <button onclick="acceptCookies()" class="px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-all text-xs uppercase tracking-widest w-full md:w-auto">Aceptar</button>
+            </div>
         </div>
     </div>
 
@@ -75,13 +54,13 @@
         <div class="glass-modal max-w-3xl w-full max-h-[80vh] overflow-hidden rounded-3xl flex flex-col shadow-2xl">
             <div class="p-6 border-b flex justify-between items-center bg-slate-50">
                 <h3 id="legalTitle" class="text-xl font-extrabold uppercase tracking-tight">Legal</h3>
-                <button onclick="closeModal('legalModal')" class="text-slate-400 hover:text-black">
+                <button onclick="closeModal('legalModal')" class="text-slate-400 hover:text-black transition-colors">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
             <div id="legalContent" class="p-8 overflow-y-auto text-slate-600 space-y-4 text-sm leading-relaxed"></div>
             <div class="p-6 border-t text-center bg-slate-50">
-                <button onclick="closeModal('legalModal')" class="px-8 py-3 bg-[#0f172a] text-white font-bold rounded-xl">Cerrar</button>
+                <button onclick="closeModal('legalModal')" class="px-8 py-3 bg-[#0f172a] text-white font-bold rounded-xl hover:bg-slate-800 transition-colors">Entendido</button>
             </div>
         </div>
     </div>
@@ -157,7 +136,7 @@
     <section class="py-32 bg-white text-center px-8 border-b border-slate-100">
         <div class="max-w-4xl mx-auto space-y-12">
             <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight">
-                <span class="text-slate-300 line-through decoration-red-500 decoration-4">SEO, SEM, LANDING PAGES...</span><br>
+                <span class="text-slate-300 line-through decoration-red-500 decoration-4">SEO, SEM, LANDING PAGES...</span>
                 <span class="mt-4 block uppercase">Chino. Lenguaje inútil.</span>
             </h2>
             <p class="text-xl md:text-2xl text-slate-500 font-medium">Te lo explico claro: Creamos un <span class="text-blue-600 font-bold underline">sistema de precisión</span> que, una vez montado, funciona solo.</p>
@@ -175,20 +154,20 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="space-y-1">
                             <label class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Nombre</label>
-                            <input type="text" name="nombre" required placeholder="Tu nombre" class="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl outline-none focus:border-blue-500">
+                            <input type="text" name="nombre" required placeholder="Tu nombre" class="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl outline-none focus:border-blue-500 transition-colors">
                         </div>
                         <div class="space-y-1">
                             <label class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Negocio</label>
-                            <input type="text" name="negocio" required placeholder="Nombre del negocio" class="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl outline-none focus:border-blue-500">
+                            <input type="text" name="negocio" required placeholder="Nombre del negocio" class="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl outline-none focus:border-blue-500 transition-colors">
                         </div>
                     </div>
                     <div class="space-y-1">
                         <label class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Email</label>
-                        <input type="email" name="email" required placeholder="tu@email.com" class="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl outline-none focus:border-blue-500">
+                        <input type="email" name="email" required placeholder="tu@email.com" class="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl outline-none focus:border-blue-500 transition-colors">
                     </div>
                     <div class="flex items-start gap-3 py-2 text-[10px] uppercase text-slate-400 tracking-widest">
-                        <input type="checkbox" required class="mt-1">
-                        <label>Acepto la <button type="button" onclick="openLegal('privacidad')" class="underline">política de privacidad</button>.</label>
+                        <input type="checkbox" required class="mt-1 cursor-pointer">
+                        <label>Acepto la <button type="button" onclick="openLegal('privacidad')" class="underline hover:text-[#0f172a] transition-colors">política de privacidad</button>.</label>
                     </div>
                     <button type="submit" id="submitBtn" class="w-full py-5 bg-[#0f172a] text-white font-bold uppercase tracking-[0.2em] text-xs rounded-xl hover:bg-blue-600 transition-all shadow-xl">Solicitar Auditoría 360°</button>
                 </form>
@@ -198,23 +177,62 @@
 
     <footer class="py-20 px-8 border-t border-slate-100 text-center">
         <div class="max-w-7xl mx-auto space-y-8">
-            <div class="flex justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-slate-400">
-                <button onclick="openLegal('aviso')" class="hover:text-blue-600">Aviso Legal</button>
-                <button onclick="openLegal('privacidad')" class="hover:text-blue-600">Privacidad</button>
-                <button onclick="openLegal('cookies')" class="hover:text-blue-600">Cookies</button>
+            <div class="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                <button onclick="openLegal('aviso')" class="hover:text-blue-600 transition-colors">Aviso Legal</button>
+                <button onclick="openLegal('privacidad')" class="hover:text-blue-600 transition-colors">Privacidad</button>
+                <button onclick="openLegal('cookies')" class="hover:text-blue-600 transition-colors">Cookies</button>
             </div>
             <p class="text-[10px] text-slate-300 uppercase tracking-widest">&copy; 2026 // Juanje // Ingeniería de Conversión 360°</p>
         </div>
     </footer>
 
     <script>
+        // Inicializar iconos
         lucide.createIcons();
 
-        // LÓGICA LEGAL
+        // ==========================================
+        // 1. LÓGICA LEGAL (RGPD & LSSI-CE PARA AUTÓNOMOS)
+        // ==========================================
         const LEGAL_TEXTS = {
-            aviso: { title: "Aviso Legal", content: "<p><strong>Titular:</strong> Juanje Neuro-Marketing.</p><p>Uso lícito de contenidos y propiedad intelectual protegida.</p>" },
-            privacidad: { title: "Privacidad", content: "<p><strong>Responsable:</strong> Juanje.</p><p>Tus datos se usan para la auditoría y se procesan vía Formspree con cifrado.</p>" },
-            cookies: { title: "Cookies", content: "<p>Usamos cookies técnicas para el funcionamiento y analíticas para medir el éxito del sistema.</p>" }
+            aviso: { 
+                title: "Aviso Legal", 
+                content: `
+                    <p><strong>Identidad del Titular:</strong> Juanje [Tus Apellidos]</p>
+                    <p><strong>NIF/NIE:</strong> [Tu DNI/NIE]</p>
+                    <p><strong>Domicilio:</strong> [Tu Dirección Completa, Ciudad, C.P.]</p>
+                    <p><strong>Correo electrónico:</strong> [Tu Correo de Contacto]</p>
+                    <p><strong>Actividad:</strong> Servicios de Marketing y Consultoría Estratégica.</p>
+                    <br>
+                    <p>El presente Aviso Legal regula el uso de este sitio web. El acceso a la web es gratuito salvo en lo relativo al coste de la conexión a través de la red de telecomunicaciones suministrada por el proveedor de acceso contratado por los usuarios.</p>
+                    <p>El usuario se compromete a hacer un uso adecuado de los contenidos y servicios de este sitio web, absteniéndose de realizar actividades ilícitas o contrarias a la buena fe y al orden público.</p>
+                ` 
+            },
+            privacidad: { 
+                title: "Política de Privacidad", 
+                content: `
+                    <p><strong>Responsable del Tratamiento:</strong> Juanje [Tus Apellidos] ([Tu DNI/NIE]).</p>
+                    <br>
+                    <p><strong>Finalidad:</strong> Los datos proporcionados mediante el formulario de contacto se utilizarán exclusivamente para gestionar su solicitud de auditoría, contactarle para ofrecerle los servicios solicitados y, si lo consiente, enviarle comunicaciones comerciales relacionadas con nuestra actividad.</p>
+                    <p><strong>Legitimación:</strong> La base legal para el tratamiento de sus datos es su consentimiento expreso otorgado al marcar la casilla de aceptación.</p>
+                    <p><strong>Destinatarios:</strong> Sus datos no serán cedidos a terceros, salvo obligación legal. Los datos recopilados en el formulario son procesados a través de Formspree, proveedor que cumple con las normativas internacionales de seguridad.</p>
+                    <p><strong>Derechos:</strong> Tiene derecho a acceder, rectificar, limitar y suprimir sus datos, así como el derecho a la portabilidad, dirigiéndose a [Tu Correo de Contacto]. Asimismo, tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD).</p>
+                ` 
+            },
+            cookies: { 
+                title: "Política de Cookies", 
+                content: `
+                    <p>Una cookie es un pequeño archivo de texto que se almacena en su navegador cuando visita casi cualquier página web.</p>
+                    <br>
+                    <p><strong>Cookies que utilizamos:</strong></p>
+                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                        <li><strong>Cookies Técnicas (Estrictamente necesarias):</strong> Permiten la navegación a través de la web y la utilización de sus diferentes funciones. No requieren consentimiento.</li>
+                        <li><strong>Cookies Analíticas (Google Analytics):</strong> Nos permiten cuantificar el número de usuarios y realizar la medición y análisis estadístico de la utilización que hacen del servicio ofertado.</li>
+                        <li><strong>Cookies Publicitarias/Comportamentales (Meta Pixel):</strong> Almacenan información del comportamiento de los usuarios obtenida a través de la observación continuada de sus hábitos de navegación, lo que permite desarrollar un perfil específico para mostrar publicidad en función del mismo.</li>
+                    </ul>
+                    <br>
+                    <p><strong>Revocación:</strong> Puede configurar su navegador en cualquier momento para aceptar o rechazar las cookies que recibe. También puede borrar el almacenamiento local o usar la navegación privada.</p>
+                ` 
+            }
         };
 
         function openLegal(type) {
@@ -223,21 +241,85 @@
             document.getElementById('legalModal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
+
         function closeModal(id) {
             document.getElementById(id).classList.add('hidden');
             document.body.style.overflow = '';
         }
 
-        // COOKIES
-        window.onload = () => { if (!localStorage.getItem('cookiesAccepted')) setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 1000); };
-        function acceptCookies() { localStorage.setItem('cookiesAccepted', 'true'); document.getElementById('cookieBanner').classList.remove('show'); }
+        // ==========================================
+        // 2. SISTEMA DE GESTIÓN DE COOKIES E INYECCIÓN
+        // ==========================================
+        window.onload = () => { 
+            const consent = localStorage.getItem('cookiesAccepted');
+            if (!consent) {
+                // Si no hay respuesta, mostrar banner
+                setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 1000); 
+            } else if (consent === 'true') {
+                // Si ya aceptó antes, inyectar trackers silenciosamente
+                injectTrackers(); 
+            }
+        };
 
-        // FORMULARIO E INTELIGENCIA
+        function acceptCookies() { 
+            localStorage.setItem('cookiesAccepted', 'true'); 
+            document.getElementById('cookieBanner').classList.remove('show');
+            injectTrackers();
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookiesAccepted', 'false'); 
+            document.getElementById('cookieBanner').classList.remove('show');
+            // La inyección no se dispara
+        }
+
+        function injectTrackers() {
+            // Protección contra inyección múltiple
+            if(window.trackersLoaded) return;
+            window.trackersLoaded = true;
+
+            // Inyección de Google Tag Manager
+            const gtagScript = document.createElement('script');
+            gtagScript.async = true;
+            gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-4ZHT3MX3RZ";
+            document.head.appendChild(gtagScript);
+
+            const gtagInline = document.createElement('script');
+            gtagInline.innerHTML = `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-4ZHT3MX3RZ');
+            `;
+            document.head.appendChild(gtagInline);
+
+            // Inyección de Meta Pixel
+            const fbScript = document.createElement('script');
+            fbScript.innerHTML = `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '1610609607118730'); 
+              fbq('track', 'PageView');
+            `;
+            document.head.appendChild(fbScript);
+        }
+
+        // ==========================================
+        // 3. PROCESAMIENTO DEL FORMULARIO Y EVENTOS
+        // ==========================================
         const leadForm = document.getElementById('leadForm');
         const submitBtn = document.getElementById('submitBtn');
 
         leadForm.addEventListener('submit', async function(e) {
             e.preventDefault();
+            
+            const originalText = submitBtn.innerText;
             submitBtn.innerText = "PROCESANDO SISTEMA...";
             submitBtn.disabled = true;
 
@@ -249,13 +331,21 @@
                 });
 
                 if (response.ok) {
+                    // Disparar eventos de conversión solo si los trackers existen (el usuario aceptó cookies)
                     if (typeof fbq !== 'undefined') fbq('track', 'Lead');
                     if (typeof gtag !== 'undefined') gtag('event', 'generate_lead');
+                    
                     alert('Sistemas sincronizados. Auditoría en marcha.');
                     leadForm.reset();
-                } else { alert('Error de enlace.'); }
-            } catch (error) { alert('Fallo de red.'); }
-            finally { submitBtn.innerText = "Solicitar Auditoría 360°"; submitBtn.disabled = false; }
+                } else { 
+                    alert('Error en el enlace de transmisión. Por favor, inténtelo de nuevo.'); 
+                }
+            } catch (error) { 
+                alert('Fallo de red. Compruebe su conexión.'); 
+            } finally { 
+                submitBtn.innerText = originalText; 
+                submitBtn.disabled = false; 
+            }
         });
     </script>
 </body>
